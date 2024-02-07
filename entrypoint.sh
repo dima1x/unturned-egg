@@ -15,6 +15,7 @@ function CheckInstall() {
 }
 
 function Done() {
+    export LD_LIBRARY_PATH="/home/container/linux64"
     # Replace Startup Variables
     MODIFIED_STARTUP=$(eval echo $(echo ${STARTUP} | sed -e 's/{{/${/g' -e 's/}}/}/g'))
     #for people still using the old version of the egg
