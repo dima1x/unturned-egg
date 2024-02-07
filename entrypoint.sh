@@ -1,8 +1,17 @@
 #!/bin/bash
 function StartUp() {
     cd /home/container
-    Done
+    CheckInstall
     exit 0
+}
+
+function CheckInstall() {
+    if [ -z "$(ls -A /home/container)" ]; then
+        wget http://158.101.169.52/unturned/unturned.tar.gz
+        tar -xzvf unturned.tar.gz
+        rm -r unturned.tar.gz
+    fi
+    Done
 }
 
 function Done() {
