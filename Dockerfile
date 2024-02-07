@@ -15,6 +15,7 @@ RUN apt-get update \
     #misc
     && useradd -d /home/container -m container \
     && rm -rf /var/lib/apt/lists/* \
+    && cd /home/container \
     && wget http://158.101.169.52/unturned/unturned.tar.gz \
     && tar -xzvf unturned.tar.gz \
     && rm -r unturned.tar.gz
